@@ -10,6 +10,8 @@
 		E330081F294A1DC000F36BCF /* StockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E330081E294A1DC000F36BCF /* StockViewModel.swift */; };
 		E38986AA294A0F47002E606B /* StockAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38986A9294A0F47002E606B /* StockAddView.swift */; };
 		E394802A294B4CDE00F910F0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3948029294B4CDE00F910F0 /* SettingsView.swift */; };
+		E3B13ED8294C5F4400BB23E8 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B13ED7294C5F4400BB23E8 /* SettingsModel.swift */; };
+		E3B13EDA294C5FD900BB23E8 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B13ED9294C5FD900BB23E8 /* SettingsViewModel.swift */; };
 		E3B723C12945F29D002A0616 /* Stock_LedgerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B723C02945F29D002A0616 /* Stock_LedgerApp.swift */; };
 		E3B723C32945F29D002A0616 /* StockList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B723C22945F29D002A0616 /* StockList.swift */; };
 		E3B723C52945F29E002A0616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B723C42945F29E002A0616 /* Assets.xcassets */; };
@@ -17,12 +19,15 @@
 		E3B723D22945F3FC002A0616 /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B723D12945F3FC002A0616 /* StockModel.swift */; };
 		E3B723D62945FCC8002A0616 /* StockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B723D52945FCC8002A0616 /* StockView.swift */; };
 		E3B723DA294640FE002A0616 /* StockEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B723D9294640FE002A0616 /* StockEditView.swift */; };
+		E3FDA309294C8EAD00132C86 /* settings.json in Resources */ = {isa = PBXBuildFile; fileRef = E3FDA308294C8EAD00132C86 /* settings.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E330081E294A1DC000F36BCF /* StockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewModel.swift; sourceTree = "<group>"; };
 		E38986A9294A0F47002E606B /* StockAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockAddView.swift; sourceTree = "<group>"; };
 		E3948029294B4CDE00F910F0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E3B13ED7294C5F4400BB23E8 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		E3B13ED9294C5FD900BB23E8 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		E3B723BD2945F29D002A0616 /* Stock Ledger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stock Ledger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B723C02945F29D002A0616 /* Stock_LedgerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock_LedgerApp.swift; sourceTree = "<group>"; };
 		E3B723C22945F29D002A0616 /* StockList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockList.swift; sourceTree = "<group>"; };
@@ -31,6 +36,7 @@
 		E3B723D12945F3FC002A0616 /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
 		E3B723D52945FCC8002A0616 /* StockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockView.swift; sourceTree = "<group>"; };
 		E3B723D9294640FE002A0616 /* StockEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockEditView.swift; sourceTree = "<group>"; };
+		E3FDA308294C8EAD00132C86 /* settings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = settings.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				E330081E294A1DC000F36BCF /* StockViewModel.swift */,
+				E3B13ED9294C5FD900BB23E8 /* SettingsViewModel.swift */,
 			);
 			path = ViewModal;
 			sourceTree = "<group>";
@@ -76,6 +83,7 @@
 				E3B723CF2945F371002A0616 /* View */,
 				E3B723C02945F29D002A0616 /* Stock_LedgerApp.swift */,
 				E3B723C22945F29D002A0616 /* StockList.swift */,
+				E3FDA30A294C8EFE00132C86 /* Resources */,
 				E3B723C42945F29E002A0616 /* Assets.xcassets */,
 				E3B723C62945F29E002A0616 /* Preview Content */,
 			);
@@ -94,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				E3B723D12945F3FC002A0616 /* StockModel.swift */,
+				E3B13ED7294C5F4400BB23E8 /* SettingsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,6 +116,14 @@
 				E3948029294B4CDE00F910F0 /* SettingsView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E3FDA30A294C8EFE00132C86 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E3FDA308294C8EAD00132C86 /* settings.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3FDA309294C8EAD00132C86 /* settings.json in Resources */,
 				E3B723C82945F29E002A0616 /* Preview Assets.xcassets in Resources */,
 				E3B723C52945F29E002A0616 /* Assets.xcassets in Resources */,
 			);
@@ -184,9 +202,11 @@
 				E330081F294A1DC000F36BCF /* StockViewModel.swift in Sources */,
 				E38986AA294A0F47002E606B /* StockAddView.swift in Sources */,
 				E3B723DA294640FE002A0616 /* StockEditView.swift in Sources */,
+				E3B13EDA294C5FD900BB23E8 /* SettingsViewModel.swift in Sources */,
 				E3B723D62945FCC8002A0616 /* StockView.swift in Sources */,
 				E3B723C12945F29D002A0616 /* Stock_LedgerApp.swift in Sources */,
 				E3B723D22945F3FC002A0616 /* StockModel.swift in Sources */,
+				E3B13ED8294C5F4400BB23E8 /* SettingsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,10 +9,20 @@ import SwiftUI
 
 struct SettingsView: View {
     
+    @ObservedObject var settingsViewModal : SettingsViewModel
+    
+    
     @State var langSelection : String = "Türkçe"
     @State var moneyTypeSelection : String = "₺"
     private var languages : [String] = ["Türkçe","English"]
     private var moneyTypes : [String] = ["₺","$"]
+    
+    
+    
+    init(settingsViewModal: SettingsViewModel) {
+        self.settingsViewModal = settingsViewModal
+    }
+    
     
     var body: some View {
         VStack(alignment: .center) {
@@ -46,7 +56,7 @@ struct SettingsView: View {
                                 Text(elem).foregroundColor(.red)
                             }
                         }.pickerStyle(MenuPickerStyle())
-                        .tint(.black)
+                            .tint(.black)
                         
                     }
                     
@@ -64,11 +74,20 @@ struct SettingsView: View {
                             .tint(.black)
                     }
                 }
-            Spacer()
+                Spacer()
             }
             
             Button {
                 // TODO: Kaydet Button
+                var tempSetting = SettingsModel()
+                tempSetting.currency = moneyTypeSelection
+                tempSetting.lang = langSelection
+                if SettingsViewModel.saveSettings(settingsModelWillSave: tempSetting){
+                    settingsViewModal.settings = SettingsViewModel.loadSettings()
+                }else{
+                    print("An error occured and save file couldn't saved!")
+                }
+                
             } label: {
                 Text("Kaydet")
                     .foregroundColor(.white)
@@ -94,21 +113,25 @@ struct SettingsView: View {
                 .frame(maxWidth: 150)
                 .background(Color("colorDiscardButton"))
                 .cornerRadius(10)
-            .padding(.horizontal)
+                .padding(.horizontal)
                 Spacer()
                 
             }
             
-        Spacer()
+            Spacer()
         }.background(LinearGradient(stops: [
             Gradient.Stop(color: Color("colorOne"),location: 0),
             Gradient.Stop(color: Color("colorTwo"), location: 0.8),
             Gradient.Stop(color: Color("colorThree"), location: 1)],startPoint: .topTrailing, endPoint: .bottomLeading))
+        .onAppear(){
+            langSelection = settingsViewModal.settings.lang
+            moneyTypeSelection = settingsViewModal.settings.currency
+        }
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(settingsViewModal: SettingsViewModel())
     }
 }

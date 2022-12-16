@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct StockList: View {
-    @StateObject var stockViewModel : StockViewModal
+    @ObservedObject var stockViewModel : StockViewModal
+    @ObservedObject var settingsViewModal : SettingsViewModel
     @State var tabSelection : Int = 0
     var body: some View {
         NavigationStack {
@@ -48,7 +49,7 @@ struct StockList: View {
                                 }
                                 .tag(1)
                             
-                            SettingsView()
+                            SettingsView(settingsViewModal: settingsViewModal)
                                 .tabItem {
                                     Image(systemName: "gearshape.fill")
                                 }
@@ -73,6 +74,6 @@ struct ContentView_Previews: PreviewProvider {
     static var svm1 = StockModel(symbol: "GWIND", buyPrice: 12, amount: 5)
    
     static var previews: some View {
-        StockList(stockViewModel: (StockViewModal()))
+        StockList(stockViewModel: (StockViewModal()),settingsViewModal: SettingsViewModel())
     }
 }

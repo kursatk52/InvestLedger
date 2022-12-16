@@ -11,12 +11,14 @@ import SwiftUI
 struct Stock_LedgerApp: App {
     
     @StateObject var stockViewModal = StockViewModal()
+    @StateObject var settingsViewModal = SettingsViewModel()
     
     var body: some Scene {
         WindowGroup{
-            StockList(stockViewModel: stockViewModal)
+            StockList(stockViewModel: self.stockViewModal,settingsViewModal: self.settingsViewModal)
                 .onAppear(){
                     stockViewModal.stocks = StockViewModal.loadStock()
+                    settingsViewModal.settings = SettingsViewModel.loadSettings()
                 }
         }
     
