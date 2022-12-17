@@ -20,6 +20,7 @@
 		E3B723D62945FCC8002A0616 /* StockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B723D52945FCC8002A0616 /* StockView.swift */; };
 		E3B723DA294640FE002A0616 /* StockEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B723D9294640FE002A0616 /* StockEditView.swift */; };
 		E3FDA309294C8EAD00132C86 /* settings.json in Resources */ = {isa = PBXBuildFile; fileRef = E3FDA308294C8EAD00132C86 /* settings.json */; };
+		E3FDA30D294CA3D400132C86 /* stocks.json in Resources */ = {isa = PBXBuildFile; fileRef = E3FDA30C294CA3D400132C86 /* stocks.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		E3B723D52945FCC8002A0616 /* StockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockView.swift; sourceTree = "<group>"; };
 		E3B723D9294640FE002A0616 /* StockEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockEditView.swift; sourceTree = "<group>"; };
 		E3FDA308294C8EAD00132C86 /* settings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = settings.json; sourceTree = "<group>"; };
+		E3FDA30C294CA3D400132C86 /* stocks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stocks.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		E3FDA30A294C8EFE00132C86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E3FDA30C294CA3D400132C86 /* stocks.json */,
 				E3FDA308294C8EAD00132C86 /* settings.json */,
 			);
 			path = Resources;
@@ -186,6 +189,7 @@
 			files = (
 				E3FDA309294C8EAD00132C86 /* settings.json in Resources */,
 				E3B723C82945F29E002A0616 /* Preview Assets.xcassets in Resources */,
+				E3FDA30D294CA3D400132C86 /* stocks.json in Resources */,
 				E3B723C52945F29E002A0616 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

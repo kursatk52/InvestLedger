@@ -10,7 +10,7 @@ import SwiftUI
 struct StockView: View {
     
     @Binding var stockVM : StockModel
-    
+    @Binding var currency : String
     
     var body: some View {
         ZStack {
@@ -32,11 +32,11 @@ struct StockView: View {
                 
                 VStack(alignment: .leading){
                     Text("\(stockVM.symbol)")
-                    Text("\(String(format: "%.2f", stockVM.buyPrice)) ₺")
+                    Text("\(String(format: "%.2f", stockVM.buyPrice)) \(currency)")
                     Text("\(stockVM.amount)")
-                    Text("\(String(format: "%.2f",stockVM.targetPrice ?? 0)) ₺")
+                    Text("\(String(format: "%.2f",stockVM.targetPrice)) \(currency)")
                     HStack{
-                        Text("\(String(format: "%.2f", stockVM.expectedProfit)) ₺")
+                        Text("\(String(format: "%.2f", stockVM.expectedProfit)) \(currency)")
                         Text("(%\(String(format: "%.2f", stockVM.expectedProfitRatio)))")
                             .foregroundColor((stockVM.expectedProfitRatio >= 0) ? .green : .red)
                     }
@@ -53,7 +53,7 @@ struct StockView: View {
 
 struct StockView_Previews: PreviewProvider {
     static var previews: some View {
-        StockView(stockVM:.constant((StockModel())))
+        StockView(stockVM:.constant(StockModel()),currency: .constant("$"))
     }
 }
 

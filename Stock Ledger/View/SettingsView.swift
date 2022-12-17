@@ -9,20 +9,19 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @ObservedObject var settingsViewModal : SettingsViewModel
-    
-    
+    var settingsViewModal : SettingsViewModel
+    @Binding var tabSelect : Int
+   
     @State var langSelection : String = "Türkçe"
     @State var moneyTypeSelection : String = "₺"
+    
     private var languages : [String] = ["Türkçe","English"]
     private var moneyTypes : [String] = ["₺","$"]
     
-    
-    
-    init(settingsViewModal: SettingsViewModel) {
+    init(settingsViewModal: SettingsViewModel, tabSelect: Binding<Int>) {
         self.settingsViewModal = settingsViewModal
+        self._tabSelect = tabSelect
     }
-    
     
     var body: some View {
         VStack(alignment: .center) {
@@ -84,6 +83,7 @@ struct SettingsView: View {
                 tempSetting.lang = langSelection
                 if SettingsViewModel.saveSettings(settingsModelWillSave: tempSetting){
                     settingsViewModal.settings = SettingsViewModel.loadSettings()
+                    tabSelect = 0
                 }else{
                     print("An error occured and save file couldn't saved!")
                 }
@@ -130,8 +130,13 @@ struct SettingsView: View {
     }
 }
 
+
 struct SettingsView_Previews: PreviewProvider {
+    
+    @ObservedObject static var sett = SettingsViewModel()
+    @State static var tab : Int = 0
+    
     static var previews: some View {
-        SettingsView(settingsViewModal: SettingsViewModel())
+        SettingsView(settingsViewModal: sett, tabSelect: $tab)
     }
 }

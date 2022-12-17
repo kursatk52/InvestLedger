@@ -26,9 +26,9 @@ struct StockList: View {
                                             LazyVStack(spacing: 10){
                                                 ForEach($stockViewModel.stocks, id: \.id) { $item in
                                                     NavigationLink {
-                                                        StockEditView(stockViewModel: stockViewModel,stockModel: $item)
+                                                        StockEditView(stockViewModel: stockViewModel,stockModel: $item,currency: $settingsViewModal.settings.currency)
                                                     } label: {
-                                                        StockView(stockVM: $item)
+                                                        StockView(stockVM: $item,currency: $settingsViewModal.settings.currency)
                                                     }
 
                                                 }
@@ -43,13 +43,13 @@ struct StockList: View {
                             .tag(0)
                             
                             
-                            StockAddView(stockViewModel: stockViewModel, tabSelect: $tabSelection)
+                            StockAddView(stockViewModel: stockViewModel, tabSelect: $tabSelection,currency: $settingsViewModal.settings.currency)
                                 .tabItem {
                                     Image(systemName: "plus.circle")
                                 }
                                 .tag(1)
-                            
-                            SettingsView(settingsViewModal: settingsViewModal)
+                       
+                            SettingsView(settingsViewModal: settingsViewModal, tabSelect: $tabSelection)
                                 .tabItem {
                                     Image(systemName: "gearshape.fill")
                                 }

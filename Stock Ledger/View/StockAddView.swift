@@ -11,6 +11,7 @@ struct StockAddView: View {
     
     @StateObject var stockViewModel : StockViewModal
     @Binding var tabSelect : Int
+    @Binding var currency : String
     @State private var stockModel : StockModel = StockModel()
     @State private var isError : Bool = false
     
@@ -75,8 +76,9 @@ struct StockAddView: View {
                                 TextField("Alış Fiyatı",value: $stockModel.buyPrice,formatter: formatterDecimal)
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
                                 Spacer()
-                                Image(systemName: "dollarsign")
-                                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 15))
+                                Text("\(currency)")
+                                    .font(.title2)
+                                    .padding(.trailing,15)
                             }
                         }
                         .cornerRadius(CGFloat.infinity)
@@ -100,8 +102,9 @@ struct StockAddView: View {
                                 TextField("Hedef Fiyatı",value: $stockModel.targetPrice ,formatter: formatterDecimal)
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
                                 Spacer()
-                                Image(systemName: "dollarsign")
-                                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 15))
+                                Text("\(currency)")
+                                    .font(.title2)
+                                    .padding(.trailing,15)
                             }
                         }
                         .cornerRadius(CGFloat.infinity)
@@ -113,6 +116,7 @@ struct StockAddView: View {
             VStack {
                 Button {
                     stockViewModel.appendItem(item: stockModel)
+                    StockViewModal.saveStock(stocks: stockViewModel.stocks)
                     stockModel.id = UUID()
                 } label: {
                     Text("Ekle")
@@ -168,6 +172,6 @@ struct StockAddView_Previews: PreviewProvider {
     @State static var tabSelect : Int = 0
     @StateObject static var sVM = StockViewModal()
     static var previews: some View {
-        StockAddView(stockViewModel: sVM,tabSelect: $tabSelect)
+        StockAddView(stockViewModel: sVM,tabSelect: $tabSelect,currency: .constant("$"))
     }
 }

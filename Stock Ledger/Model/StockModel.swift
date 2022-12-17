@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StockModel: Hashable{
+struct StockModel: Hashable, Codable{
     var id : UUID
     var symbol : String
     var buyPrice : Double

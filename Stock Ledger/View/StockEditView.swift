@@ -11,6 +11,8 @@ struct StockEditView: View {
     
     @StateObject var stockViewModel : StockViewModal
     @Binding var stockModel : StockModel
+    @Binding var currency : String
+    
     @State private var data : StockModel.Data = StockModel.Data()
     
     @Environment(\.dismiss) private var dismiss
@@ -77,8 +79,9 @@ struct StockEditView: View {
                                 TextField("Alış Fiyatı",value: $data.buyPrice,formatter: formatterDecimal)
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
                                 Spacer()
-                                Image(systemName: "dollarsign")
-                                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 15))
+                                Text("\(currency)")
+                                    .font(.title2)
+                                    .padding(.trailing,15)
                             }
                         }
                         .cornerRadius(CGFloat.infinity)
@@ -100,10 +103,11 @@ struct StockEditView: View {
                         .overlay {
                             HStack{
                                 TextField("Hedef Fiyatı",value: $data.targetPrice ,formatter: formatterDecimal)
-                                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
+                                    .padding(.leading,20)
                                 Spacer()
-                                Image(systemName: "dollarsign")
-                                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 15))
+                                Text("\(currency)")
+                                    .font(.title2)
+                                    .padding(.trailing,15)
                             }
                         }
                         .cornerRadius(CGFloat.infinity)
@@ -115,6 +119,7 @@ struct StockEditView: View {
             VStack {
                 Button {
                     stockModel.update(data:data)
+                    StockViewModal.saveStock(stocks: stockViewModel.stocks)
                     dismiss()
                 } label: {
                     Text("Kaydet")
@@ -167,6 +172,6 @@ struct StockSettingView_Previews: PreviewProvider {
     @State static var den : StockModel = StockModel()
     @State static var den2 : StockViewModal = StockViewModal()
     static var previews: some View {
-        StockEditView(stockViewModel: den2,stockModel: $den)
+        StockEditView(stockViewModel: den2,stockModel: $den,currency: .constant("$"))
     }
 }
