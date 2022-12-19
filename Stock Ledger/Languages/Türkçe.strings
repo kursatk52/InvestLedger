@@ -1,0 +1,16 @@
+"my-stocks" = "Hisselerim";
+"symbol" = "Sembol: ";
+"symbol-name" = "Sembol İsmi";
+"buy-price" = "Alış Fiyatı: ";
+"amount" = "Miktar: ";
+"sell-price" = "Satış Fiyatı: ";
+"expected-profit" = "Beklenen Kar: ";
+"edit-stock" = "Hisseyi Düzenle";
+"save" = "Kaydet";
+"delete" = "Sil";
+"discard" = "İptal";
+"add-new-stock" = "Yeni Hisse Ekle";
+"add" = "Ekle";
+"settings" = "Ayarlar";
+"language" = "Dil: ";
+"currency" = "Para Birimi: ";

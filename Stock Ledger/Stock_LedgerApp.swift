@@ -24,6 +24,7 @@ struct Stock_LedgerApp: App {
                     SettingsViewModel.saveSettings(settingsModelWillSave: settingsViewModal.settings)
                     StockViewModal.saveStock(stocks: stockViewModel.stocks)
                 }
+                .environment(\.locale, .init(identifier: "tr"))
                 
         }
     

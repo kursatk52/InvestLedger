@@ -13,7 +13,7 @@ struct SettingsView: View {
     @Binding var tabSelect : Int
    
     @State var langSelection : String = "Türkçe"
-    @State var moneyTypeSelection : String = "₺"
+    @State var moneyTypeSelection : String = "$"
     
     private var languages : [String] = ["Türkçe","English"]
     private var moneyTypes : [String] = ["₺","$"]
@@ -25,7 +25,7 @@ struct SettingsView: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            Text("Ayarlar")
+            Text("settings",tableName: langSelection)
                 .font(.title)
                 .bold(true)
                 .foregroundColor(.white)
@@ -34,11 +34,11 @@ struct SettingsView: View {
             HStack {
                 Spacer()
                 VStack(spacing: 17){
-                    Text("Dil: ")
+                    Text("language",tableName: langSelection)
                         .font(.title3)
                         .bold(true)
                         .foregroundColor(.white)
-                    Text("Para Birimi: ")
+                    Text("currency",tableName: langSelection)
                         .font(.title3)
                         .bold(true)
                         .foregroundColor(.white)
@@ -50,7 +50,7 @@ struct SettingsView: View {
                             .opacity(0.3)
                             .frame(width: 120,height: 35)
                             .cornerRadius(.infinity)
-                        Picker("Dil Seçimi", selection: $langSelection) {
+                        Picker("Langugages", selection: $langSelection) {
                             ForEach(languages, id: \.self) { elem in
                                 Text(elem).foregroundColor(.red)
                             }
@@ -65,7 +65,7 @@ struct SettingsView: View {
                             .opacity(0.3)
                             .frame(width: 120,height: 35)
                             .cornerRadius(.infinity)
-                        Picker("Para Birimi Seçimi", selection: $moneyTypeSelection) {
+                        Picker("Currencies", selection: $moneyTypeSelection) {
                             ForEach(moneyTypes, id: \.self) { elem in
                                 Text(elem).foregroundColor(.red)
                             }
@@ -89,7 +89,7 @@ struct SettingsView: View {
                 }
                 
             } label: {
-                Text("Kaydet")
+                Text("save",tableName: langSelection)
                     .foregroundColor(.white)
                     .padding(.vertical,10)
                     .frame(maxWidth: .infinity)
@@ -104,7 +104,7 @@ struct SettingsView: View {
                 Button {
                     // TODO: İptal Button
                 } label: {
-                    Text("İptal")
+                    Text("discard",tableName: langSelection)
                         .foregroundColor(.black)
                         .padding(.vertical,10)
                         .frame(maxWidth: .infinity)

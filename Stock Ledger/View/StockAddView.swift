@@ -12,6 +12,7 @@ struct StockAddView: View {
     @StateObject var stockViewModel : StockViewModal
     @Binding var tabSelect : Int
     @Binding var currency : String
+    @Binding var language : String
     @State private var stockModel : StockModel = StockModel()
     @State private var isError : Bool = false
     
@@ -24,7 +25,7 @@ struct StockAddView: View {
     
     var body: some View {
         VStack {
-            Text("Yeni Hisse Ekle")
+            Text("add-new-stock",tableName: language)
                 .font(.title)
                 .bold(true)
                 .foregroundColor(.white)
@@ -32,19 +33,19 @@ struct StockAddView: View {
             Spacer()
             HStack(alignment: .top){
                 VStack(alignment: .trailing,spacing: 25){
-                    Text("Sembol: ")
+                    Text("symbol",tableName: language)
                         .font(.title3)
                         .bold(true)
                     
-                    Text("Alış Fiyatı: ")
+                    Text("buy-price",tableName: language)
                         .font(.title3)
                         .bold(true)
                         
-                    Text("Miktar: ")
+                    Text("amount",tableName: language)
                         .font(.title3)
                         .bold(true)
                         
-                    Text("Hedef Fiyat: ")
+                    Text("sell-price",tableName: language)
                         .font(.title3)
                         .bold(true)
                 }.padding(.top,5)
@@ -58,7 +59,7 @@ struct StockAddView: View {
                         .overlay {
                             ZStack(alignment: .leading){
                                 if stockModel.symbol.isEmpty {
-                                    Text("Sembol İsmi")
+                                    Text("symbol-name",tableName: language)
                                         .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
                                 }
                                 TextField("",text: $stockModel.symbol)
@@ -73,7 +74,7 @@ struct StockAddView: View {
                         .opacity(0.11)
                         .overlay {
                             HStack{
-                                TextField("Alış Fiyatı",value: $stockModel.buyPrice,formatter: formatterDecimal)
+                                TextField("0",value: $stockModel.buyPrice,formatter: formatterDecimal)
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
                                 Spacer()
                                 Text("\(currency)")
@@ -88,7 +89,7 @@ struct StockAddView: View {
                         .frame(width: 200,height: 40)
                         .opacity(0.11)
                         .overlay {
-                            TextField("Miktar",value: $stockModel.amount, formatter: NumberFormatter())
+                            TextField("0",value: $stockModel.amount, formatter: NumberFormatter())
                                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
                         }
                         .cornerRadius(CGFloat.infinity)
@@ -99,7 +100,7 @@ struct StockAddView: View {
                         .opacity(0.11)
                         .overlay {
                             HStack{
-                                TextField("Hedef Fiyatı",value: $stockModel.targetPrice ,formatter: formatterDecimal)
+                                TextField("0",value: $stockModel.targetPrice ,formatter: formatterDecimal)
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
                                 Spacer()
                                 Text("\(currency)")
@@ -119,7 +120,7 @@ struct StockAddView: View {
                     StockViewModal.saveStock(stocks: stockViewModel.stocks)
                     stockModel.id = UUID()
                 } label: {
-                    Text("Ekle")
+                    Text("add",tableName: language)
                         .foregroundColor(.white)
                         .padding(.vertical,10)
                         .frame(maxWidth: .infinity)
@@ -136,7 +137,7 @@ struct StockAddView: View {
                         stockModel = StockModel(symbol: "EX", buyPrice: 0, amount: 0,targetPrice:0)
                         tabSelect = 0
                     } label: {
-                        Text("İptal")
+                        Text("discard",tableName: language)
                             .foregroundColor(.black)
                             .padding(.vertical,10)
                             .frame(maxWidth: .infinity)
@@ -172,6 +173,6 @@ struct StockAddView_Previews: PreviewProvider {
     @State static var tabSelect : Int = 0
     @StateObject static var sVM = StockViewModal()
     static var previews: some View {
-        StockAddView(stockViewModel: sVM,tabSelect: $tabSelect,currency: .constant("$"))
+        StockAddView(stockViewModel: sVM,tabSelect: $tabSelect,currency: .constant("$"),language: .constant("Türkçe"))
     }
 }

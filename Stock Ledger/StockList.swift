@@ -11,12 +11,13 @@ struct StockList: View {
     @ObservedObject var stockViewModel : StockViewModal
     @ObservedObject var settingsViewModal : SettingsViewModel
     @State var tabSelection : Int = 0
+    
     var body: some View {
         NavigationStack {
             TabView(selection: $tabSelection){
                         Group {
                             VStack {
-                                Text("Hisselerim")
+                                Text("my-stocks",tableName: settingsViewModal.settings.lang)
                                     .font(.title)
                                     .bold(true)
                                     .foregroundColor(.white)
@@ -26,9 +27,9 @@ struct StockList: View {
                                             LazyVStack(spacing: 10){
                                                 ForEach($stockViewModel.stocks, id: \.id) { $item in
                                                     NavigationLink {
-                                                        StockEditView(stockViewModel: stockViewModel,stockModel: $item,currency: $settingsViewModal.settings.currency)
+                                                        StockEditView(stockViewModel: stockViewModel,stockModel: $item,currency: $settingsViewModal.settings.currency,language: $settingsViewModal.settings.lang)
                                                     } label: {
-                                                        StockView(stockVM: $item,currency: $settingsViewModal.settings.currency)
+                                                        StockView(stockVM: $item,currency: $settingsViewModal.settings.currency,language: $settingsViewModal.settings.lang)
                                                     }
 
                                                 }
@@ -43,7 +44,7 @@ struct StockList: View {
                             .tag(0)
                             
                             
-                            StockAddView(stockViewModel: stockViewModel, tabSelect: $tabSelection,currency: $settingsViewModal.settings.currency)
+                            StockAddView(stockViewModel: stockViewModel, tabSelect: $tabSelection,currency: $settingsViewModal.settings.currency,language: $settingsViewModal.settings.lang)
                                 .tabItem {
                                     Image(systemName: "plus.circle")
                                 }
@@ -64,7 +65,9 @@ struct StockList: View {
             }
             .navigationViewStyle(.stack)
             .accentColor(.white)
+            
         }
+        
         
     }
 }

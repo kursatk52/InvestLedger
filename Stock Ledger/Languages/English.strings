@@ -1,0 +1,16 @@
+"my-stocks" = "My Stocks";
+"symbol" = "Symbol: ";
+"symbol-name" = "Symbol Name";
+"buy-price" = "Buy Price: ";
+"amount" = "Amount: ";
+"sell-price" = "Sell Price: ";
+"expected-profit" = "Expected Profit: ";
+"edit-stock" = "Edit Stock";
+"save" = "Save";
+"delete" = "Delete";
+"discard" = "Discard";
+"add-new-stock" = "Add New Stock";
+"add" = "Add";
+"settings" = "Settings";
+"language" = "Language: ";
+"currency" = "Currency: ";

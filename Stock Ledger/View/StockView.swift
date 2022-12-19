@@ -11,7 +11,7 @@ struct StockView: View {
     
     @Binding var stockVM : StockModel
     @Binding var currency : String
-    
+    @Binding var language : String
     var body: some View {
         ZStack {
             Rectangle()
@@ -20,11 +20,11 @@ struct StockView: View {
                 .cornerRadius(30)
             HStack{
                 VStack(alignment: .trailing){
-                    Text("Sembol: ")
-                    Text("Alış Fiyat: ")
-                    Text("Miktar: ")
-                    Text("Hedef Fiyat: ")
-                    Text("Beklenen Kar: ")
+                    Text("symbol", tableName: language)
+                    Text("buy-price", tableName: language)
+                    Text("amount", tableName: language)
+                    Text("sell-price", tableName: language)
+                    Text("expected-profit", tableName: language)
                 }
                 .font(.title2)
                 .bold(true)
@@ -53,7 +53,7 @@ struct StockView: View {
 
 struct StockView_Previews: PreviewProvider {
     static var previews: some View {
-        StockView(stockVM:.constant(StockModel()),currency: .constant("$"))
+        StockView(stockVM:.constant(StockModel()),currency: .constant("$"),language: .constant("Türkçe"))
     }
 }
 
