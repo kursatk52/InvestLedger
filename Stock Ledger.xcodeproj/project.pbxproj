@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1FD27E50EDA1233A3763C90 /* Pods_Stock_Ledger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8850DA90D0BC6439014FC9D9 /* Pods_Stock_Ledger.framework */; };
 		E330081F294A1DC000F36BCF /* StockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E330081E294A1DC000F36BCF /* StockViewModel.swift */; };
 		E38986AA294A0F47002E606B /* StockAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38986A9294A0F47002E606B /* StockAddView.swift */; };
 		E394802A294B4CDE00F910F0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3948029294B4CDE00F910F0 /* SettingsView.swift */; };
@@ -26,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04BAABC63756B480D28E05AC /* Pods-Stock Ledger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Ledger.debug.xcconfig"; path = "Target Support Files/Pods-Stock Ledger/Pods-Stock Ledger.debug.xcconfig"; sourceTree = "<group>"; };
+		40B061C6E86A13200D5BB61A /* Pods-Stock Ledger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Ledger.release.xcconfig"; path = "Target Support Files/Pods-Stock Ledger/Pods-Stock Ledger.release.xcconfig"; sourceTree = "<group>"; };
+		8850DA90D0BC6439014FC9D9 /* Pods_Stock_Ledger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock_Ledger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E32B4A1429508E6400B7F51B /* Stock-Ledger-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Stock-Ledger-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E330081E294A1DC000F36BCF /* StockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewModel.swift; sourceTree = "<group>"; };
 		E38986A9294A0F47002E606B /* StockAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockAddView.swift; sourceTree = "<group>"; };
 		E3948029294B4CDE00F910F0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -50,12 +55,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1FD27E50EDA1233A3763C90 /* Pods_Stock_Ledger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BC5218B087DBC3DD1263D60 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04BAABC63756B480D28E05AC /* Pods-Stock Ledger.debug.xcconfig */,
+				40B061C6E86A13200D5BB61A /* Pods-Stock Ledger.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		662B15EC4B255EB3F121FFFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8850DA90D0BC6439014FC9D9 /* Pods_Stock_Ledger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E3300820294A1DD500F36BCF /* ViewModal */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +94,8 @@
 			children = (
 				E3B723BF2945F29D002A0616 /* Stock Ledger */,
 				E3B723BE2945F29D002A0616 /* Products */,
+				0BC5218B087DBC3DD1263D60 /* Pods */,
+				662B15EC4B255EB3F121FFFE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +110,7 @@
 		E3B723BF2945F29D002A0616 /* Stock Ledger */ = {
 			isa = PBXGroup;
 			children = (
+				E32B4A1429508E6400B7F51B /* Stock-Ledger-Info.plist */,
 				E3B723CE2945F369002A0616 /* Model */,
 				E3300820294A1DD500F36BCF /* ViewModal */,
 				E3B723CF2945F371002A0616 /* View */,
@@ -150,6 +177,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3B723CB2945F29E002A0616 /* Build configuration list for PBXNativeTarget "Stock Ledger" */;
 			buildPhases = (
+				5007868DFE5487A9A5D8AA20 /* [CP] Check Pods Manifest.lock */,
 				E3B723B92945F29D002A0616 /* Sources */,
 				E3B723BA2945F29D002A0616 /* Frameworks */,
 				E3B723BB2945F29D002A0616 /* Resources */,
@@ -212,6 +240,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5007868DFE5487A9A5D8AA20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Stock Ledger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E3B723B92945F29D002A0616 /* Sources */ = {
@@ -284,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -338,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -350,27 +403,32 @@
 		};
 		E3B723CC2945F29E002A0616 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04BAABC63756B480D28E05AC /* Pods-Stock Ledger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Stock Ledger/Preview Content\"";
+				DEVELOPMENT_TEAM = J7T5XZ3K56;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Stock-Ledger-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nkdesignstudio.Stock-Ledger";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nkdesignstudio.investledger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -383,27 +441,32 @@
 		};
 		E3B723CD2945F29E002A0616 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40B061C6E86A13200D5BB61A /* Pods-Stock Ledger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Stock Ledger/Preview Content\"";
+				DEVELOPMENT_TEAM = J7T5XZ3K56;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Stock-Ledger-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nkdesignstudio.Stock-Ledger";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nkdesignstudio.investledger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

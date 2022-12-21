@@ -13,13 +13,12 @@ struct StockList: View {
     @State var tabSelection : Int = 0
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             TabView(selection: $tabSelection){
                         Group {
                             VStack {
                                 Text("my-stocks",tableName: settingsViewModal.settings.lang)
-                                    .font(.title)
-                                    .bold(true)
+                                    .font(.title.bold())
                                     .foregroundColor(.white)
                                     .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
                                  

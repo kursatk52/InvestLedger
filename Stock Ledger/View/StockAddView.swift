@@ -26,28 +26,23 @@ struct StockAddView: View {
     var body: some View {
         VStack {
             Text("add-new-stock",tableName: language)
-                .font(.title)
-                .bold(true)
+                .font(.title.bold())
                 .foregroundColor(.white)
                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
             Spacer()
             HStack(alignment: .top){
                 VStack(alignment: .trailing,spacing: 25){
                     Text("symbol",tableName: language)
-                        .font(.title3)
-                        .bold(true)
+                        .font(.title3.bold())
                     
                     Text("buy-price",tableName: language)
-                        .font(.title3)
-                        .bold(true)
+                        .font(.title3.bold())
                         
                     Text("amount",tableName: language)
-                        .font(.title3)
-                        .bold(true)
+                        .font(.title3.bold())
                         
                     Text("sell-price",tableName: language)
-                        .font(.title3)
-                        .bold(true)
+                        .font(.title3).bold()
                 }.padding(.top,5)
                 
                 
@@ -124,7 +119,7 @@ struct StockAddView: View {
                         .foregroundColor(.white)
                         .padding(.vertical,10)
                         .frame(maxWidth: .infinity)
-                        .bold(true)
+                        .font(.body.bold())
                 }
                 
                 .frame(maxWidth: .infinity)
@@ -141,7 +136,7 @@ struct StockAddView: View {
                             .foregroundColor(.black)
                             .padding(.vertical,10)
                             .frame(maxWidth: .infinity)
-                            .bold(true)
+                            .font(.body.bold())
                     }
                     .frame(maxWidth: 150)
                     .background(Color("colorDiscardButton"))

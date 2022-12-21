@@ -26,8 +26,7 @@ struct SettingsView: View {
     var body: some View {
         VStack(alignment: .center) {
             Text("settings",tableName: langSelection)
-                .font(.title)
-                .bold(true)
+                .font(.title.bold())
                 .foregroundColor(.white)
                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
             Spacer()
@@ -35,12 +34,10 @@ struct SettingsView: View {
                 Spacer()
                 VStack(spacing: 17){
                     Text("language",tableName: langSelection)
-                        .font(.title3)
-                        .bold(true)
+                        .font(.title3.bold())
                         .foregroundColor(.white)
                     Text("currency",tableName: langSelection)
-                        .font(.title3)
-                        .bold(true)
+                        .font(.title3.bold())
                         .foregroundColor(.white)
                 }
                 VStack{
@@ -93,7 +90,7 @@ struct SettingsView: View {
                     .foregroundColor(.white)
                     .padding(.vertical,10)
                     .frame(maxWidth: .infinity)
-                    .bold(true)
+                    .font(.body.bold())
             }
             .frame(maxWidth: .infinity)
             .background(Color("colorSaveButton"))
@@ -108,7 +105,7 @@ struct SettingsView: View {
                         .foregroundColor(.black)
                         .padding(.vertical,10)
                         .frame(maxWidth: .infinity)
-                        .bold(true)
+                        .font(Font.headline.bold())
                 }
                 .frame(maxWidth: 150)
                 .background(Color("colorDiscardButton"))

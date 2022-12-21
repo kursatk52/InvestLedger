@@ -15,7 +15,7 @@ class StockViewModal : ObservableObject{
     static public func loadStock()->[StockModel]{
         
         if let jsonURL = Bundle.main.url(forResource: "stocks.json", withExtension: nil){
-            var jsonDecoder = JSONDecoder()
+            let jsonDecoder = JSONDecoder()
             do{
                 let jsonData = try Data(contentsOf: jsonURL)
                 let jsonParsedStock = try jsonDecoder.decode([StockModel].self, from: jsonData)
@@ -32,7 +32,7 @@ class StockViewModal : ObservableObject{
     
     static public func saveStock(stocks: [StockModel]){
         if let jsonURL = Bundle.main.url(forResource: "stocks.json", withExtension: nil){
-            var jsonEncoder = JSONEncoder()
+            let jsonEncoder = JSONEncoder()
             do{
                 let jsonData = try jsonEncoder.encode(stocks)
                 try jsonData.write(to: jsonURL)

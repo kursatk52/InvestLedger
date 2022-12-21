@@ -26,8 +26,7 @@ struct StockView: View {
                     Text("sell-price", tableName: language)
                     Text("expected-profit", tableName: language)
                 }
-                .font(.title2)
-                .bold(true)
+                .font(.title2.bold())
                 .foregroundColor(.white)
                 
                 VStack(alignment: .leading){
@@ -39,6 +38,7 @@ struct StockView: View {
                         Text("\(String(format: "%.2f", stockVM.expectedProfit)) \(currency)")
                         Text("(%\(String(format: "%.2f", stockVM.expectedProfitRatio)))")
                             .foregroundColor((stockVM.expectedProfitRatio >= 0) ? .green : .red)
+                            .font(.body)
                     }
                 }
                 .foregroundColor(.white)
