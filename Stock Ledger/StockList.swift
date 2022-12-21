@@ -21,7 +21,12 @@ struct StockList: View {
                                     .font(.title.bold())
                                     .foregroundColor(.white)
                                     .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
-                                 
+                                if stockViewModel.stocks.isEmpty{
+                                    Text("no-item",tableName: settingsViewModal.settings.lang)
+                                        .font(.body)
+                                        .padding(.top,50)
+                                        .foregroundColor(.gray)
+                                }
                                     ScrollView(.vertical){
                                             LazyVStack(spacing: 10){
                                                 ForEach($stockViewModel.stocks, id: \.id) { $item in

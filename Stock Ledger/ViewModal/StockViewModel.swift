@@ -27,7 +27,7 @@ class StockViewModal : ObservableObject{
         }
         
         print("Stocks file couldn't found!")
-        return [StockModel()]
+        return []
     }
     
     static public func saveStock(stocks: [StockModel]){
