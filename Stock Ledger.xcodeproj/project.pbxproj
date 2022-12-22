@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		BDDD1C38823B1B7706520905 /* Pods_Stock_Ledger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B9C6A013E903E0BD56AA4B3 /* Pods_Stock_Ledger.framework */; };
+		E328EDB02954A57300E57CB3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E328EDAF2954A57300E57CB3 /* FirebaseAuth */; };
+		E328EDB22954A57300E57CB3 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E328EDB12954A57300E57CB3 /* FirebaseDatabase */; };
+		E328EDB42954A57300E57CB3 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E328EDB32954A57300E57CB3 /* FirebaseDatabaseSwift */; };
+		E328EDB62954A57300E57CB3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E328EDB52954A57300E57CB3 /* FirebaseFirestore */; };
+		E328EDB82954A57300E57CB3 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E328EDB72954A57300E57CB3 /* FirebaseFirestoreSwift */; };
+		E328EDBA2954A57300E57CB3 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E328EDB92954A57300E57CB3 /* FirebaseStorage */; };
+		E328EDBC2954A8C700E57CB3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E328EDBB2954A8C700E57CB3 /* LoginView.swift */; };
+		E328EDC02954AA8100E57CB3 /* textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = E328EDBF2954AA8100E57CB3 /* textfield.swift */; };
+		E328EDC22954AEBC00E57CB3 /* securefield.swift in Sources */ = {isa = PBXBuildFile; fileRef = E328EDC12954AEBC00E57CB3 /* securefield.swift */; };
 		E330081F294A1DC000F36BCF /* StockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E330081E294A1DC000F36BCF /* StockViewModel.swift */; };
 		E338B8822953196400B78163 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E338B8812953196400B78163 /* GoogleService-Info.plist */; };
 		E38986AA294A0F47002E606B /* StockAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38986A9294A0F47002E606B /* StockAddView.swift */; };
@@ -32,6 +41,9 @@
 		6B9C6A013E903E0BD56AA4B3 /* Pods_Stock_Ledger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock_Ledger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E304C82B295312A300F68E7F /* Stock Ledger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stock Ledger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E30691602953163E001EFC83 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		E328EDBB2954A8C700E57CB3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E328EDBF2954AA8100E57CB3 /* textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textfield.swift; sourceTree = "<group>"; };
+		E328EDC12954AEBC00E57CB3 /* securefield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = securefield.swift; sourceTree = "<group>"; };
 		E330081E294A1DC000F36BCF /* StockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewModel.swift; sourceTree = "<group>"; };
 		E338B8812953196400B78163 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E38986A9294A0F47002E606B /* StockAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockAddView.swift; sourceTree = "<group>"; };
@@ -57,7 +69,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E328EDB42954A57300E57CB3 /* FirebaseDatabaseSwift in Frameworks */,
+				E328EDB22954A57300E57CB3 /* FirebaseDatabase in Frameworks */,
 				BDDD1C38823B1B7706520905 /* Pods_Stock_Ledger.framework in Frameworks */,
+				E328EDB62954A57300E57CB3 /* FirebaseFirestore in Frameworks */,
+				E328EDBA2954A57300E57CB3 /* FirebaseStorage in Frameworks */,
+				E328EDB02954A57300E57CB3 /* FirebaseAuth in Frameworks */,
+				E328EDB82954A57300E57CB3 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +97,15 @@
 				F6504E3EB25065174D7DE462 /* Pods-Stock Ledger.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E328EDBE2954AA6A00E57CB3 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				E328EDBF2954AA8100E57CB3 /* textfield.swift */,
+				E328EDC12954AEBC00E57CB3 /* securefield.swift */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 		E3300820294A1DD500F36BCF /* ViewModal */ = {
@@ -104,11 +131,11 @@
 		E3B723BF2945F29D002A0616 /* Stock Ledger */ = {
 			isa = PBXGroup;
 			children = (
+				E328EDBE2954AA6A00E57CB3 /* UIView */,
 				E3B723CE2945F369002A0616 /* Model */,
 				E3300820294A1DD500F36BCF /* ViewModal */,
 				E3B723CF2945F371002A0616 /* View */,
 				E3B723C02945F29D002A0616 /* Stock_LedgerApp.swift */,
-				E3B723C22945F29D002A0616 /* StockList.swift */,
 				E3FDA30A294C8EFE00132C86 /* Resources */,
 				E3D80D13295045D500091552 /* Languages */,
 				E3B723C42945F29E002A0616 /* Assets.xcassets */,
@@ -138,10 +165,12 @@
 		E3B723CF2945F371002A0616 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E3B723C22945F29D002A0616 /* StockList.swift */,
 				E3B723D52945FCC8002A0616 /* StockView.swift */,
 				E3B723D9294640FE002A0616 /* StockEditView.swift */,
 				E38986A9294A0F47002E606B /* StockAddView.swift */,
 				E3948029294B4CDE00F910F0 /* SettingsView.swift */,
+				E328EDBB2954A8C700E57CB3 /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,6 +210,14 @@
 			dependencies = (
 			);
 			name = "Stock Ledger";
+			packageProductDependencies = (
+				E328EDAF2954A57300E57CB3 /* FirebaseAuth */,
+				E328EDB12954A57300E57CB3 /* FirebaseDatabase */,
+				E328EDB32954A57300E57CB3 /* FirebaseDatabaseSwift */,
+				E328EDB52954A57300E57CB3 /* FirebaseFirestore */,
+				E328EDB72954A57300E57CB3 /* FirebaseFirestoreSwift */,
+				E328EDB92954A57300E57CB3 /* FirebaseStorage */,
+			);
 			productName = "Stock Ledger";
 			productReference = E304C82B295312A300F68E7F /* Stock Ledger.app */;
 			productType = "com.apple.product-type.application";
@@ -210,6 +247,9 @@
 				tr,
 			);
 			mainGroup = E3B723B42945F29D002A0616;
+			packageReferences = (
+				E328EDAE2954A57300E57CB3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = E3B723B42945F29D002A0616;
 			projectDirPath = "";
 			projectRoot = "";
@@ -271,11 +311,14 @@
 				E330081F294A1DC000F36BCF /* StockViewModel.swift in Sources */,
 				E38986AA294A0F47002E606B /* StockAddView.swift in Sources */,
 				E3B723DA294640FE002A0616 /* StockEditView.swift in Sources */,
+				E328EDBC2954A8C700E57CB3 /* LoginView.swift in Sources */,
 				E3B13EDA294C5FD900BB23E8 /* SettingsViewModel.swift in Sources */,
+				E328EDC02954AA8100E57CB3 /* textfield.swift in Sources */,
 				E3B723D62945FCC8002A0616 /* StockView.swift in Sources */,
 				E3B723C12945F29D002A0616 /* Stock_LedgerApp.swift in Sources */,
 				E3B723D22945F3FC002A0616 /* StockModel.swift in Sources */,
 				E3B13ED8294C5F4400BB23E8 /* SettingsModel.swift in Sources */,
+				E328EDC22954AEBC00E57CB3 /* securefield.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +543,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E328EDAE2954A57300E57CB3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E328EDAF2954A57300E57CB3 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E328EDAE2954A57300E57CB3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E328EDB12954A57300E57CB3 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E328EDAE2954A57300E57CB3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		E328EDB32954A57300E57CB3 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E328EDAE2954A57300E57CB3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		E328EDB52954A57300E57CB3 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E328EDAE2954A57300E57CB3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		E328EDB72954A57300E57CB3 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E328EDAE2954A57300E57CB3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		E328EDB92954A57300E57CB3 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E328EDAE2954A57300E57CB3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E3B723B52945F29D002A0616 /* Project object */;
 }

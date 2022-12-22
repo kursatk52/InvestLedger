@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
 struct StockList: View {
     @ObservedObject var stockViewModel : StockViewModal
@@ -27,7 +29,10 @@ struct StockList: View {
                                         .padding(.top,50)
                                         .foregroundColor(.gray)
                                 }
-                                    ScrollView(.vertical){
+                                
+                                
+                                
+                                ScrollView(.vertical){
                                             LazyVStack(spacing: 10){
                                                 ForEach($stockViewModel.stocks, id: \.id) { $item in
                                                     NavigationLink {
