@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    
+    @EnvironmentObject var sessionController : SessionController
     var settingsViewModal : SettingsViewModel
     @Binding var tabSelect : Int
    
@@ -114,6 +114,24 @@ struct SettingsView: View {
                 Spacer()
                 
             }
+            
+            Button {
+                // TODO: LogOut
+                sessionController.signOut()
+                
+            } label: {
+                Text("logout",tableName: langSelection)
+                    .foregroundColor(.white)
+                    .padding(.vertical,10)
+                    .frame(maxWidth: .infinity)
+                    .font(.body.bold())
+            }
+            .frame(maxWidth: .infinity)
+            .background(Color("colorSaveButton"))
+            .cornerRadius(10)
+            .padding(EdgeInsets(top: 20, leading: 16, bottom: 0, trailing: 16))
+            
+            
             
             Spacer()
         }.background(LinearGradient(stops: [

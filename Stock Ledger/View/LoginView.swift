@@ -12,7 +12,7 @@ import FirebaseCoreExtension
 
 struct LoginView: View {
     
-    @Binding var isLogged : Bool
+    @EnvironmentObject var sessionController : SessionController
     @Binding var username : String
     @Binding var password : String
     @State private var isWrong : Bool = false
@@ -31,34 +31,7 @@ struct LoginView: View {
                         .cornerRadius(.infinity)
                         .overlay {
                             Button {
-                                Auth.auth().signIn(withEmail: username, password: password) { Authresult, error in
-                                    
-                                    
-                                    if let result = Authresult?.user.email{
-                                        if result == username{
-                                            isLogged = true
-                                            isWrong = false
-                                        }else{
-                                            isLogged = false
-                                            isWrong = true
-                                        }
-                                        
-                                    }else{
-                                        print("nil")
-                                    }
-                                    
-                                    print(error.debugDescription)
-                                    
-                                    
-                                    
-                                    
-                                    if let err = error{
-                                        var authError = err as NSError
-                                        if authError.code == 17011 || authError.code == 17009{
-                                            isWrong = true
-                                        }
-                                    }
-                                }
+                                sessionController.signIn(email: username, password: password, handler: nil)
                             } label: {
                                 Text("LogIN")
                                     .frame(maxWidth: .infinity,maxHeight: .infinity)
@@ -72,11 +45,13 @@ struct LoginView: View {
                     .cornerRadius(.infinity)
                     .overlay {
                         Button {
-                            Auth.auth().createUser(withEmail: username, password: password) { result, error in
-                                print("Result: " , result.debugDescription)
-                            }
+                            var changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                            changeRequest?.displayName = "Kursat"
+                            changeRequest?.commitChanges(completion: { error in
+                                print(error.debugDescription)
+                            })
                         } label: {
-                            Text("Register")
+                            Text("Change name")
                                 .frame(maxWidth: .infinity,maxHeight: .infinity)
                         }
                     }
@@ -104,6 +79,6 @@ struct LoginView_Previews: PreviewProvider {
     @State static var username : String = "info@investledger.com"
     @State static var pass : String = "123456"
     static var previews: some View {
-        LoginView(isLogged: .constant(false),username: $username,password: $pass)
+        LoginView(username: $username,password: $pass)
     }
 }

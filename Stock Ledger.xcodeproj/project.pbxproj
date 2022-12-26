@@ -32,6 +32,8 @@
 		E3B723DA294640FE002A0616 /* StockEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B723D9294640FE002A0616 /* StockEditView.swift */; };
 		E3D80D15295045F100091552 /* Türkçe.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3D80D14295045F100091552 /* Türkçe.strings */; };
 		E3D80D172950467400091552 /* English.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3D80D162950467400091552 /* English.strings */; };
+		E3E2B1FB295A29BC004DA145 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2B1FA295A29BC004DA145 /* UserModel.swift */; };
+		E3E2B1FD295A2A4F004DA145 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2B1FC295A2A4F004DA145 /* SessionController.swift */; };
 		E3FDA309294C8EAD00132C86 /* settings.json in Resources */ = {isa = PBXBuildFile; fileRef = E3FDA308294C8EAD00132C86 /* settings.json */; };
 		E3FDA30D294CA3D400132C86 /* stocks.json in Resources */ = {isa = PBXBuildFile; fileRef = E3FDA30C294CA3D400132C86 /* stocks.json */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,8 @@
 		E3B723D9294640FE002A0616 /* StockEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockEditView.swift; sourceTree = "<group>"; };
 		E3D80D14295045F100091552 /* Türkçe.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = "Türkçe.strings"; sourceTree = "<group>"; };
 		E3D80D162950467400091552 /* English.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = English.strings; sourceTree = "<group>"; };
+		E3E2B1FA295A29BC004DA145 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E3E2B1FC295A2A4F004DA145 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
 		E3FDA308294C8EAD00132C86 /* settings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = settings.json; sourceTree = "<group>"; };
 		E3FDA30C294CA3D400132C86 /* stocks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stocks.json; sourceTree = "<group>"; };
 		F6504E3EB25065174D7DE462 /* Pods-Stock Ledger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Ledger.release.xcconfig"; path = "Target Support Files/Pods-Stock Ledger/Pods-Stock Ledger.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 			children = (
 				E3B723D12945F3FC002A0616 /* StockModel.swift */,
 				E3B13ED7294C5F4400BB23E8 /* SettingsModel.swift */,
+				E3E2B1FA295A29BC004DA145 /* UserModel.swift */,
+				E3E2B1FC295A2A4F004DA145 /* SessionController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,10 +316,12 @@
 				E394802A294B4CDE00F910F0 /* SettingsView.swift in Sources */,
 				E330081F294A1DC000F36BCF /* StockViewModel.swift in Sources */,
 				E38986AA294A0F47002E606B /* StockAddView.swift in Sources */,
+				E3E2B1FD295A2A4F004DA145 /* SessionController.swift in Sources */,
 				E3B723DA294640FE002A0616 /* StockEditView.swift in Sources */,
 				E328EDBC2954A8C700E57CB3 /* LoginView.swift in Sources */,
 				E3B13EDA294C5FD900BB23E8 /* SettingsViewModel.swift in Sources */,
 				E328EDC02954AA8100E57CB3 /* textfield.swift in Sources */,
+				E3E2B1FB295A29BC004DA145 /* UserModel.swift in Sources */,
 				E3B723D62945FCC8002A0616 /* StockView.swift in Sources */,
 				E3B723C12945F29D002A0616 /* Stock_LedgerApp.swift in Sources */,
 				E3B723D22945F3FC002A0616 /* StockModel.swift in Sources */,

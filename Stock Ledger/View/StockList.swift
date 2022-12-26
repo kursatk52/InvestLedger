@@ -9,6 +9,7 @@ import SwiftUI
 import Firebase
 import FirebaseAuth
 
+
 struct StockList: View {
     @ObservedObject var stockViewModel : StockViewModal
     @ObservedObject var settingsViewModal : SettingsViewModel
@@ -29,7 +30,6 @@ struct StockList: View {
                                         .padding(.top,50)
                                         .foregroundColor(.gray)
                                 }
-                                
                                 
                                 
                                 ScrollView(.vertical){
