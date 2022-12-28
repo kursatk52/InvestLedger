@@ -33,12 +33,13 @@ struct Stock_LedgerApp: App {
                 if sessionController.user != nil {
                     StockList(stockViewModel: self.stockViewModel,settingsViewModal: self.settingsViewModal)
                         .onAppear(){
-                            stockViewModel.stocks = StockViewModal.loadStock()
                             settingsViewModal.settings = SettingsViewModel.loadSettings()
+                            print("Appear")
                         }
                         .onDisappear(){
                             SettingsViewModel.saveSettings(settingsModelWillSave: settingsViewModal.settings)
                             StockViewModal.saveStock(stocks: stockViewModel.stocks)
+                            print("Disappear")
                         }
                 }else{
                     LoginView(username:$username,password: $password)

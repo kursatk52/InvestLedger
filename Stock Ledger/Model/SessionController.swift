@@ -19,7 +19,7 @@ class SessionController : ObservableObject{
     public func listen(){
         handle = Auth.auth().addStateDidChangeListener{(ath, usr) in
             if let usr = usr{
-                self.user = User(displayName: usr.displayName!, uid: usr.uid, email: usr.email)
+                self.user = User(displayName: usr.displayName ?? "None", uid: usr.uid, email: usr.email)
             }else{
                 self.user = nil
             }

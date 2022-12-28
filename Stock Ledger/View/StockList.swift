@@ -13,6 +13,7 @@ import FirebaseAuth
 struct StockList: View {
     @ObservedObject var stockViewModel : StockViewModal
     @ObservedObject var settingsViewModal : SettingsViewModel
+    
     @State var tabSelection : Int = 0
     
     var body: some View {
@@ -51,6 +52,9 @@ struct StockList: View {
                                 Image(systemName: "list.bullet.clipboard.fill")
                             }
                             .tag(0)
+                            .onAppear(){
+                                print("Stock List: Appear")
+                            }
                             
                             
                             StockAddView(stockViewModel: stockViewModel, tabSelect: $tabSelection,currency: $settingsViewModal.settings.currency,language: $settingsViewModal.settings.lang)
@@ -76,9 +80,18 @@ struct StockList: View {
             .accentColor(.white)
             
         }
+        .task {
+            stockViewModel.stocks = await StockViewModal.loadStock()
+        }
+        .onAppear(){
+            tabSelection = 0
+            
+        }
+        
         
         
     }
+        
 }
 
 struct ContentView_Previews: PreviewProvider {

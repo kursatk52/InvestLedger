@@ -35,6 +35,7 @@ struct LoginView: View {
                             } label: {
                                 Text("LogIN")
                                     .frame(maxWidth: .infinity,maxHeight: .infinity)
+                                
                             }
                         }
                 
